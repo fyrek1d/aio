@@ -406,7 +406,7 @@
          <div class="flex items-start gap-4">
           <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0 mt-1"><i data-lucide="users" class="w-5 h-5 text-purple-500"></i>
           </div>
-          <div>
+<div>
            <h4 class="font-bold text-sm uppercase tracking-wider mb-1">Expert Consultation</h4>
            <p class="text-zinc-500 text-sm">One-on-one advice on components, cooling solutions, and system configuration.</p>
           </div>
@@ -418,16 +418,45 @@
        <div class="absolute -inset-10 bg-blue-600/10 blur-3xl rounded-3xl pointer-events-none"></div>
        <div class="glass-card p-8 rounded-3xl relative z-10">
         <h3 class="text-2xl font-bold mb-8 tracking-tight" style="font-family: Space Grotesk;">Get Started</h3>
-        <form id="inquiry-form" class="space-y-5">
-         <div><label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Full Name</label> <input type="text" id="cust-name" placeholder="John Doe" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm">
+        
+        <form action="https://api.web3forms.com/submit" method="POST" id="inquiry-form" class="space-y-5">
+         
+         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+         <div>
+          <label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Full Name</label> 
+          <input type="text" name="name" id="cust-name" placeholder="John Doe" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm">
          </div>
-         <div><label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Email Address</label> <input type="email" id="cust-email" placeholder="your@email.com" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm">
+         
+         <div>
+          <label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Email Address</label> 
+          <input type="email" name="email" id="cust-email" placeholder="your@email.com" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm">
          </div>
-         <div><label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Service Type</label> <select id="service-type" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm appearance-none cursor-pointer"> <option value="PC-Help" class="bg-zinc-900">💻 General Computer Help</option> <option value="Build" class="bg-zinc-900">🖥️ PC Build Bench Service</option> <option value="Repair" class="bg-zinc-900">🔧 Technical Repair</option> <option value="Upgrade" class="bg-zinc-900">⬆️ PC Upgrade</option> </select>
+         
+         <div class="relative">
+          <label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Service Type</label> 
+          <select name="service_type" id="service-type" class="peer w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-all text-sm appearance-none cursor-pointer relative z-10"> 
+           <option value="PC-Help" class="bg-zinc-900">💻 General Computer Help</option> 
+           <option value="Build" class="bg-zinc-900">🖥️ PC Build Bench Service</option> 
+           <option value="Repair" class="bg-zinc-900">🔧 Technical Repair</option> 
+           <option value="Upgrade" class="bg-zinc-900">⬆️ PC Upgrade</option> 
+          </select>
+          <div class="absolute right-4 bottom-3.5 pointer-events-none transition-transform duration-300 peer-focus:rotate-180 text-zinc-400 z-20">
+           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
          </div>
-         <div><label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Build Details</label> <textarea id="service-details" placeholder="Tell us about your build goals, current system, or issues..." required rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm resize-none"></textarea>
-         </div><button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-blue-600/30 py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider btn-shine"> <span>Submit Request</span> <i data-lucide="send" class="w-4 h-4"></i> </button>
+         
+         <div>
+          <label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Build Details</label> 
+          <textarea name="message" id="service-details" placeholder="Tell us about your build goals, current system, or issues..." required rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition-colors text-sm resize-none"></textarea>
+         </div>
+         
+         <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-blue-600/30 py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider btn-shine"> 
+          <span>Submit Request</span> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg> 
+         </button>
         </form>
+        
         <div id="form-message" class="hidden mt-4 p-4 rounded-xl text-sm font-medium"></div>
        </div>
       </div>
