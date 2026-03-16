@@ -676,26 +676,33 @@
                 //created_at: new Date().toISOString()
             //};
 
-            const result = await window.dataSdk.create(record);
+            //const result = await window.dataSdk.create(record);
             
-            btn.disabled = false;
-            btn.innerHTML = `<span>Submit Request</span><i data-lucide="send" class="w-4 h-4"></i>`;
-            lucide.createIcons();
+            //btn.disabled = false;
+            //btn.innerHTML = `<span>Submit Request</span><i data-lucide="send" class="w-4 h-4"></i>`;
+            //lucide.createIcons();
 
-            if (result.isOk) {
-                msgEl.textContent = "Your request has been sent! Our team will contact you within 24 hours.";
-                msgEl.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-green-500/20 text-green-400 block";
-                document.getElementById('inquiry-form').reset();
-            } else {
-                msgEl.textContent = "Something went wrong. Please try again.";
-                msgEl.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-red-500/20 text-red-400 block";
-            }
+            //if (result.isOk) {
+            //    msgEl.textContent = "Your request has been sent! Our team will contact you within 24 hours.";
+            //    msgEl.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-green-500/20 text-green-400 block";
+            //    document.getElementById('inquiry-form').reset();
+            //} else {
+            //    msgEl.textContent = "Something went wrong. Please try again.";
+            //    msgEl.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-red-500/20 text-red-400 block";
+            //}
 
-            setTimeout(() => { msgEl.classList.add('hidden'); }, 5000);
-        });
+          //  setTimeout(() => { msgEl.classList.add('hidden'); }, 5000);
+        //});
 
-        // Initialize on load
+        // Replace the current initApp() call with this:
+        window.addEventListener('load', () => {
         initApp();
+    });;
     </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9dcc1761b7c7db45',t:'MTc3MzU4MzcxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+<script>function refreshIcons() {
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}</script>
+ </html>
