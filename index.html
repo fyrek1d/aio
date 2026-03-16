@@ -421,7 +421,7 @@
         
         <form action="https://api.web3forms.com/submit" method="POST" id="inquiry-form" class="space-y-5">
          
-         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+         <input type="hidden" name="access_key" value="b6b404bb-49ec-44bb-a785-46761ee662c7">
 
          <div>
           <label class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Full Name</label> 
@@ -653,28 +653,28 @@
         }
 
         // Handle Form Submission
-        document.getElementById('inquiry-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            const msgEl = document.getElementById('form-message');
+        //document.getElementById('inquiry-form').addEventListener('submit', async (e) => {
+        //    e.preventDefault();
+          //  const btn = document.getElementById('submit-btn');
+            //const msgEl = document.getElementById('form-message');
             
-            if (currentData.length >= 999) {
-                msgEl.textContent = "Request limit reached. Please call us directly.";
-                msgEl.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-red-500/20 text-red-400 block";
-                return;
-            }
+            //if (currentData.length >= 999) {
+            //    msgEl.textContent = "Request limit reached. Please call us directly.";
+            //    msgEl.className = "mt-4 p-4 rounded-xl text-sm font-medium bg-red-500/20 text-red-400 block";
+            //    return;
+            //}
 
-            btn.disabled = true;
-            btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Processing...`;
-            lucide.createIcons();
+           // btn.disabled = true;
+            //btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Processing...`;
+            //lucide.createIcons();
 
-            const record = {
-                customer_name: document.getElementById('cust-name').value,
-                customer_email: document.getElementById('cust-email').value,
-                service_type: document.getElementById('service-type').value,
-                details: document.getElementById('service-details').value,
-                created_at: new Date().toISOString()
-            };
+            //const record = {
+            //    customer_name: document.getElementById('cust-name').value,
+              //  customer_email: document.getElementById('cust-email').value,
+                //service_type: document.getElementById('service-type').value,
+                //details: document.getElementById('service-details').value,
+                //created_at: new Date().toISOString()
+            //};
 
             const result = await window.dataSdk.create(record);
             
