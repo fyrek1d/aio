@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+        }
+        
+        .category {
+            margin-bottom: 40px;
+        }
+        
+        .category h2 {
+            background-color: #444;
+            color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .product h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .product p {
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #27ae60;
+            font-size: 18px;
+        }
+        
+        .stock {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📦 Product Inventory</h1>
+        <p>Complete catalog of available products</p>
+    </header>
+    
+    <div class="category">
+        <h2>Core Components</h2>
+        <div class="products">
+            <div class="product">
+                <h3>CPU Processor</h3>
+                <p>High-performance multi-core processor</p>
+                <p class="price">$299.99</p>
+                <p class="stock">Stock: 15</p>
+            </div>
+            <div class="product">
+                <h3>Motherboard</h3>
+                <p>ATX form factor with DDR5 support</p>
+                <p class="price">$189.99</p>
+                <p class="stock">Stock: 22</p>
+            </div>
+            <div class="product">
+                <h3>RAM Module</h3>
+                <p>32GB DDR5 3600MHz memory</p>
+                <p class="price">$129.99</p>
+                <p class="stock">Stock: 45</p>
+            </div>
+            <div class="product">
+                <h3>SSD Storage</h3>
+                <p>1TB NVMe PCIe 4.0</p>
+                <p class="price">$89.99</p>
+                <p class="stock">Stock: 38</p>
+            </div>
+            <div class="product">
+                <h3>Graphics Card</h3>
+                <p>12GB VRAM high-end gaming GPU</p>
+                <p class="price">$599.99</p>
+                <p class="stock">Stock: 8</p>
+            </div>
+            <div class="product">
+                <h3>Power Supply</h3>
+                <p>850W 80+ Gold modular PSU</p>
+                <p class="price">$139.99</p>
+                <p class="stock">Stock: 18</p>
+            </div>
+            <div class="product">
+                <h3>CPU Cooler</h3>
+                <p>Liquid cooling system 360mm</p>
+                <p class="price">$99.99</p>
+                <p class="stock">Stock: 25</p>
+            </div>
+            <div class="product">
+                <h3>Case</h3>
+                <p>Mid-tower with tempered glass</p>
+                <p class="price">$79.99</p>
+                <p class="stock">Stock: 12</p>
+            </div>
+            <div class="product">
+                <h3>HDD Storage</h3>
+                <p>4TB 7200RPM mechanical drive</p>
+                <p class="price">$69.99</p>
+                <p class="stock">Stock: 30</p>
+            </div>
+            <div class="product">
+                <h3>Thermal Paste</h3>
+                <p>Premium thermal compound 5g</p>
+                <p class="price">$12.99</p>
+                <p class="stock">Stock: 100</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Peripherals</h2>
+        <div class="products">
+            <div class="product">
+                <h3>Gaming Mouse</h3>
+                <p>Wireless 16000 DPI sensor</p>
+                <p class="price">$59.99</p>
+                <p class="stock">Stock: 42</p>
+            </div>
+            <div class="product">
+                <h3>Mechanical Keyboard</h3>
+                <p>RGB backlit Cherry MX switches</p>
+                <p class="price">$119.99</p>
+                <p class="stock">Stock: 28</p>
+            </div>
+            <div class="product">
+                <h3>USB Hub</h3>
+                <p>7-port USB 3.0 powered hub</p>
+                <p class="price">$34.99</p>
+                <p class="stock">Stock: 55</p>
+            </div>
+            <div class="product">
+                <h3>Webcam</h3>
+                <p>1080p HD with auto-focus</p>
+                <p class="price">$49.99</p>
+                <p class="price">Stock: 33</p>
+            </div>
+            <div class="product">
+                <h3>Headset</h3>
+                <p>Wireless noise-cancelling</p>
+                <p class="price">$149.99</p>
+                <p class="stock">Stock: 19</p>
+            </div>
+            <div class="product">
+                <h3>Mousepad</h3>
+                <p>Large extended XXL size</p>
+                <p class="price">$24.99</p>
+                <p class="stock">Stock: 67</p>
+            </div>
+            <div class="product">
+                <h3>USB Cable</h3>
+                <p>USB-C 3.1 1.5m cable</p>
+                <p class="price">$14.99</p>
+                <p class="stock">Stock: 150</p>
+            </div>
+            <div class="product">
+                <h3>Monitor Stand</h3>
+                <p>Adjustable dual monitor arm</p>
+                <p class="price">$79.99</p>
+                <p class="stock">Stock: 21</p>
+            </div>
+            <div class="product">
+                <h3>Screen Protector</h3>
+                <p>Anti-glare tempered glass</p>
+                <p class="price">$19.99</p>
+                <p class="stock">Stock: 88</p>
+            </div>
+            <div class="product">
+                <h3>Card Reader</h3>
+                <p>Multi-format USB 3.0</p>
+                <p class="price">$29.99</p>
+                <p class="stock">Stock: 44</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Setup Accessories</h2>
+        <div class="products">
+            <div class="product">
+                <h3>Desk Lamp</h3>
+                <p>LED with adjustable brightness</p>
+                <p class="price">$39.99</p>
+                <p class="stock">Stock: 36</p>
+            </div>
+            <div class="product">
+                <h3>Cable Management Kit</h3>
+                <p>Clips, sleeves, and ties set</p>
+                <p class="price">$22.99</p>
+                <p class="stock">Stock: 73</p>
+            </div>
+            <div class="product">
+                <h3>Desk Organizer</h3>
+                <p>Bamboo with multiple compartments</p>
+                <p class="price">$34.99</p>
+                <p class="stock">Stock: 29</p>
+            </div>
+            <div class="product">
+                <h3>Monitor Riser</h3>
+                <p>Portable aluminum stand</p>
+                <p class="price">$44.99</p>
+                <p class="stock">Stock: 41</p>
+            </div>
+            <div class="product">
+                <h3>Surge Protector</h3>
+                <p>6-outlet with USB ports</p>
+                <p class="price">$29.99</p>
+                <p class="stock">Stock: 52</p>
+            </div>
+            <div class="product">
+                <h3>Desk Mat</h3>
+                <p>Large waterproof leather mat</p>
+                <p class="price">$49.99</p>
+                <p class="stock">Stock: 35</p>
+            </div>
+            <div class="product">
+                <h3>Phone Stand</h3>
+                <p>Adjustable aluminum holder</p>
+                <p class="price">$19.99</p>
+                <p class="stock">Stock: 81</p>
+            </div>
+            <div class="product">
+                <h3>Cable Sleeve</h3>
+                <p>5m black nylon braid</p>
+                <p class="price">$12.99</p>
+                <p class="stock">Stock: 120</p>
+            </div>
+            <div class="product">
+                <h3>Desk Chair Mat</h3>
+                <p>90x120cm protective floor pad</p>
+                <p class="price">$59.99</p>
+                <p class="stock">Stock: 16</p>
+            </div>
+            <div class="product">
+                <h3>RGB Light Strip</h3>
+                <p>10m smart WiFi controlled</p>
+                <p class="price">$34.99</p>
+                <p class="stock">Stock: 47</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
