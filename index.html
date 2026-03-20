@@ -32,6 +32,13 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
+        .glass-card.no-hover:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: none;
+            box-shadow: none;
+        }
+
         .hero-gradient {
             background: radial-gradient(circle at top right, var(--accent-secondary), transparent 40%),
                         radial-gradient(circle at bottom left, var(--accent-primary), transparent 40%);
@@ -393,7 +400,7 @@
       </div>
       <div class="relative">
        <div class="absolute -inset-10 bg-blue-600/10 blur-3xl rounded-3xl pointer-events-none"></div>
-       <div class="glass-card p-8 rounded-3xl relative z-10">
+       <div class="glass-card no-hover p-8 rounded-3xl relative z-10">
         <h3 class="text-2xl font-bold mb-8 tracking-tight" style="font-family: Space Grotesk;">Get Started</h3>
         
         <form action="https://api.web3forms.com/submit" method="POST" id="inquiry-form" class="space-y-5">
@@ -482,7 +489,7 @@
       </div>
      </div>
     </div>
-   </section><!-- Footer -->
+   </section>
    <footer class="mt-auto py-16 px-6 lg:px-12 border-t border-white/5 bg-[#0a0a0a]">
     <div class="max-w-7xl mx-auto">
      <div class="grid md:grid-cols-4 gap-12 mb-12">
@@ -530,7 +537,6 @@
    </footer>
   </div>
   <script>
-        // Default Config
         const defaultConfig = {
             background_color: "#0a0a0a",
             surface_color: "#1a1a1a",
@@ -548,7 +554,6 @@
 
         let currentData = [];
 
-        // Data Handler for Service Inquiries
         const dataHandler = {
             onDataChanged(data) {
                 currentData = data;
@@ -556,7 +561,6 @@
             }
         };
 
-        // Element SDK initialization
         async function initApp() {
             if (window.elementSdk) {
                 window.elementSdk.init({
@@ -571,28 +575,24 @@
                         const fontFamily = config.font_family || defaultConfig.font_family;
                         const fontSize = config.font_size || defaultConfig.font_size;
 
-                        // Apply colors
                         document.body.style.backgroundColor = bgColor;
                         document.body.style.color = textColor;
                         document.getElementById('app-wrapper').style.backgroundColor = bgColor;
                         
-                        // Set CSS variables for gradients
                         root.style.setProperty('--accent-primary', primaryColor);
                         root.style.setProperty('--accent-secondary', secondaryColor);
 
-                        // Buttons & Accents
+
                         document.querySelectorAll('.bg-blue-600').forEach(el => el.style.backgroundColor = primaryColor);
                         document.querySelectorAll('.text-blue-500').forEach(el => el.style.color = primaryColor);
                         document.querySelectorAll('.text-blue-400').forEach(el => el.style.color = primaryColor);
                         
-                        // Secondary accents
+
                         document.querySelectorAll('.text-cyan-400').forEach(el => el.style.color = secondaryColor);
 
-                        // Typography
                         document.body.style.fontFamily = `${fontFamily}, sans-serif`;
                         document.body.style.fontSize = `${fontSize}px`;
 
-                        // Content Updates
                         document.getElementById('nav-brand-name').textContent = config.brand_name || defaultConfig.brand_name;
                         document.getElementById('footer-brand-name').textContent = config.brand_name || defaultConfig.brand_name;
                         document.getElementById('hero-title-el').textContent = config.hero_title || defaultConfig.hero_title;
@@ -621,8 +621,6 @@
                     ])
                 });
             }
-
-            // Data SDK initialization
             if (window.dataSdk) {
                 const initResult = await window.dataSdk.init(dataHandler);
                 if (!initResult.isOk) console.error("Data SDK failed");
@@ -630,8 +628,6 @@
 
             lucide.createIcons();
         }
-
-        // Handle Form Submission
         //document.getElementById('inquiry-form').addEventListener('submit', async (e) => {
         //    e.preventDefault();
           //  const btn = document.getElementById('submit-btn');
@@ -673,7 +669,6 @@
           //  setTimeout(() => { msgEl.classList.add('hidden'); }, 5000);
         //});
 
-        // Replace the current initApp() call with this:
         window.addEventListener('load', () => {
         initApp();
     });;
