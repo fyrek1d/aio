@@ -3,86 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty</title>
+    <title>Warranty - AIO</title>
+    <link rel="icon" href="/images/Sleek_Logo_for_aio_with_Gradient_Colors-removebg-preview.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: white;
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        h1 {
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            color: #222;
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
-        
-        h2 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            color: #444;
+
+        .nav-link {
+            position: relative;
         }
-        
-        p {
-            margin-bottom: 15px;
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease;
         }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+
+        .nav-link:hover::after {
+            width: 100%;
         }
-        
-        li {
-            margin-bottom: 8px;
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Warranty</h1>
-        
-        <h2>Coverage</h2>
-        <p>Our warranty covers defects in materials and workmanship under normal use conditions.</p>
-        
-        <h2>Duration</h2>
-        <p>Coverage is valid for 12 months from the date of purchase.</p>
-        
-        <h2>What's Covered</h2>
-        <ul>
-            <li>Manufacturing defects</li>
-            <li>Component failures</li>
-            <li>Hardware malfunctions</li>
-        </ul>
-        
-        <h2>What's Not Covered</h2>
-        <ul>
-            <li>Damage from misuse or accidents</li>
-            <li>Normal wear and tear</li>
-            <li>Unauthorized repairs</li>
-        </ul>
-        
-        <h2>How to Claim</h2>
-        <p>Contact our support team with proof of purchase and a description of the issue.</p>
+<body class="bg-[#0a0a0a] text-white overflow-auto">
+    <div class="w-full min-h-full flex flex-col">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full z-50 py-4 px-6 lg:px-12 flex justify-between items-center bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="w-11 h-11 flex items-center justify-center group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-300">
+                    <img src="/images/Sleek_Logo_for_aio_with_Gradient_Colors-removebg-preview.png" alt="AIO Logo" class="w-full h-full object-contain">
+                </div>
+                <span class="text-2xl font-black tracking-tight" style="font-family: Space Grotesk;"></span>
+            </div>
+            <div class="hidden md:flex items-center gap-12 font-medium">
+                <a href="/" class="nav-link text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">Home</a>
+                <a href="/inventory" class="nav-link text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">Inventory</a>
+                <a href="/#bench" class="nav-link text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">Build Bench</a>
+                <a href="/#mobile" class="nav-link text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">Services</a>
+            </div>
+            <button class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
 
-        <h2>Contact Information</h2>
-        <p>If you have any questions about this warranty, please contact us at:</p>
-        <p>Email: help@aiotech.com.au</p>
-        <p>Phone: 99668119</p>
+        <!-- Main Content -->
+        <section class="pt-32 pb-20 px-6 lg:px-12 min-h-screen flex items-center">
+            <div class="max-w-4xl mx-auto w-full">
+                <div class="glass-card no-hover rounded-3xl p-8 lg:p-12">
+                    <h1 class="text-4xl lg:text-5xl font-black mb-8 tracking-tight" style="font-family: Space Grotesk;">Warranty</h1>
+                    <div class="prose prose-lg prose-invert max-w-none">
+                        <p class="text-zinc-400 mb-6">Last updated: [Date]</p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Warranty Coverage</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">What is Covered</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">What is Not Covered</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Warranty Period</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">How to Claim</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Contact Support</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Additional Information</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            insert policy here
+                        </p>
+                    </div>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Information We Collect</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            We may collect personal information about you, including:
+
+Name, email address, phone number, and billing details
+
+Account login information
+
+Transaction history and service usage data
+
+Communications you send to us (e.g., support requests)
+
+We may also collect information automatically, such as:
+
+IP address, device type, and browser details
+
+Pages visited and time spent on our website
+
+Cookies or similar tracking technologies
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">How We Use Your Information</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            We use your information to:
+
+Provide, operate, and improve our services
+
+Process payments and manage transactions
+
+Respond to inquiries and provide customer support
+
+Send marketing communications where you have consented
+
+Monitor usage trends and improve website functionality
+
+Comply with legal obligations
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Data Sharing and Disclosure</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            We do not sell your personal information. We may disclose information to:
+
+Service providers performing functions on our behalf (e.g., payment processors, IT support)
+
+Government authorities if required by law
+
+Business partners where you have consented
+
+We will take reasonable steps to ensure that any overseas recipients provide similar privacy protection.
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Data Security</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            We retain personal information only as long as necessary to fulfill the purposes outlined in this Privacy Policy or as required by law.
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Your Rights</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            We implement reasonable steps to protect your personal information from misuse, interference, loss, and unauthorized access, modification, or disclosure.
+                        </p>
+                        
+                        <h2 class="text-2xl font-bold mb-4 text-white">Contact Us</h2>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            For questions, concerns, or access requests regarding your personal information:
+
+AIO Technologies
+Email: help@aiotech.com.au
+Phone: 99668119
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-auto py-16 px-6 lg:px-12 border-t border-white/5 bg-[#0a0a0a]">
+            <div class="max-w-7xl mx-auto">
+                <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="text-xs text-zinc-600">
+                        © AIO Technology. All rights reserved.
+                    </div>
+                    <div class="flex gap-4 text-xs text-zinc-600">
+                        <a href="/privacypolicy" class="hover:text-zinc-300 transition-colors">Privacy Policy</a>
+                        <a href="/termsofservice" class="hover:text-zinc-300 transition-colors">Terms of Service</a>
+                        <a href="/warranty" class="hover:text-zinc-300 transition-colors">Warranty</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

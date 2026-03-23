@@ -23,30 +23,16 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
 
         .nav-link {
             position: relative;
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: currentColor;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
+        .no-hover:hover {
+            transform: none !important;
+            box-shadow: none !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
         }
 
         /* Custom scrollbar */
@@ -182,8 +168,8 @@ Phone: 99668119
                     </div>
                     <div class="flex gap-4 text-xs text-zinc-600">
                         <a href="/privacypolicy" class="hover:text-zinc-300 transition-colors">Privacy Policy</a>
-                        <a href="#" class="hover:text-zinc-300 transition-colors">Terms of Service</a>
-                        <a href="#" class="hover:text-zinc-300 transition-colors">Warranty</a>
+                        <a href="/termsofservice" class="hover:text-zinc-300 transition-colors">Terms of Service</a>
+                        <a href="/warranty" class="hover:text-zinc-300 transition-colors">Warranty</a>
                     </div>
                 </div>
             </div>
